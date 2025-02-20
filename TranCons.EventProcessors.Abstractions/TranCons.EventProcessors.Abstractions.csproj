@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TranCons.EventListener.Abstractions\TranCons.EventListener.Abstractions.csproj" />
+    <ProjectReference Include="..\TranCons.Shared\TranCons.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,52 @@
+﻿<Window x:Class="TranCons.Monitor.Windows.MonitorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TranCons.Monitor"
+        xmlns:controls="clr-namespace:TranCons.Monitor.Controls"
+        xmlns:system="clr-namespace:System;assembly=System.Runtime"
+        xmlns:implementation="clr-namespace:TranCons.EventProcessors.Implementation;assembly=TranCons.EventProcessors.Implementation"
+        mc:Ignorable="d"
+        Title="Monitor Window" Height="640" Width="1280"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Grid.Column="1">
+
+            <ListBox ItemsSource="{Binding AvailableEventProcessors}">
+                <ListBox.ItemTemplate>
+                    <ItemContainerTemplate>
+                        <StackPanel Orientation="Horizontal"
+                                    VerticalAlignment="Center">
+                            <CheckBox IsChecked="{Binding IsActive, Mode=TwoWay }"
+                                      VerticalAlignment="Center"/>
+                            <Label Content="{Binding Name}"
+                                   VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ItemContainerTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
+
+        <controls:GraphPlot
+            Grid.Column="0"
+            Background="White"
+            Series="{Binding ActiveEventProcessors}">
+            <controls:GraphPlot.Visualizers>
+                <controls:TypeSpeedVisualizer EventProcessorType="implementation:AvgTypeSpeedMeter" Events="{Binding Events}" Stroke="Blue"/>
+                <controls:TypeSpeedVisualizer EventProcessorType="implementation:InstantTypeSpeedMeter" Events="{Binding Events}" Stroke="Green"/>
+                <controls:PercentVisualizer EventProcessorType="implementation:TypeUniformityMeter" Events="{Binding Events}" Stroke="HotPink"/>
+                <controls:PressedKeyVisualizer EventProcessorType="implementation:PressedKeyViewer" Events="{Binding Events}" Background="LightGray"/>
+                <controls:AvgKeyVisualizer EventProcessorType="implementation:MostPopularKeyCalculator" Events="{Binding Events}" Background="LightPink"/>
+            </controls:GraphPlot.Visualizers>
+        </controls:GraphPlot>
+
+    </Grid>
+</Window>
