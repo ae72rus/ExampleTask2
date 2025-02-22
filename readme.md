@@ -12,6 +12,7 @@ The graph can display the following indicators (select one or more as desired):
 - Printing uniformity
 - Value of the pressed key
 - Average key value
+
 It is advisable to write the program in C# WPF using a reactive approach to programming.
 
 # Note
