@@ -1,21 +1,21 @@
-﻿# Задание
-Требуется написать программу, которая строит графики статистики печати на клавиатуре.
-Программа состоит из 2 частей.
+# Task
+You need to write a program that plots graphs of keyboard typing statistics.
+The program consists of 2 parts.
 
-Одна часть запускается на одном компьютере, и открывает окошко, в которое человек может набирать текст.
+One part runs on one computer and opens a window in which a person can type text.
 
-Другая часть запускается на другом компьютере, подключается по сети к первой, и показывает в приближенном к реальному времени график.
-На графике могут отображаться следующие показатели (выбрать один или несколько по желанию):
+The other part runs on another computer, connects to the first one over the network, and displays a graph in close to real time.
+The graph can display the following indicators (select one or more as desired):
 
-Мгновенная скорость печати
-Средняя скорость печати
-Равномерность печати
-Значение нажатой клавиши
-Среднее значение клавиш
-Программу желательно написать на C# WPF с использованием реактивного подхода к программированию. 
+- Instantaneous typing speed
+- Average typing speed
+- Printing uniformity
+- Value of the pressed key
+- Average key value
+It is advisable to write the program in C# WPF using a reactive approach to programming.
 
-# Примечание
-Написание тестов проигнорировано из-за экономии времени.
+# Note
+Writing tests is ignored due to time savings.
 
-TranCons.Input - приложение с окном, куда нужно печатать текст
-TranCons.Monitor - приложение с "монитором", визуализирующим данные
+TranCons.Input - an application with a window where you need to type text
+TranCons.Monitor - an application with a "monitor" that visualizes data
